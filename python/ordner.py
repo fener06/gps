@@ -4,9 +4,9 @@ from os import path
 
 today = datetime.date.today()
 todaystr = today.isoformat()
-if os.path.exists(todaystr) == True:
+if os.path.exists(output/todaystr) == True:
 	print('directory exists')
 else:
-	os.mkdir(todaystr)
+	os.mkdir(output/todaystr)
 	print('directory created')
 

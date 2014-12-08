@@ -4,9 +4,12 @@ from os import path
 
 today = datetime.date.today()
 todaystr = today.isoformat()
-if os.path.exists(output/todaystr) == True:
-	print('directory exists')
+
+os.chdir('/home/pi/gps/output')
+
+if os.path.exists(todaystr) == True:
+    print('directory exists')
 else:
-	os.mkdir(output/todaystr)
-	print('directory created')
+    os.mkdir(todaystr)
+        print('directory created')
 

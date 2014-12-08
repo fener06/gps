@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
       os.system('clear')
       time.sleep(0)
-      file = open(todaystr + "/GPS_" + '{:%d.%m.%Y_%H:%M:%S}'.format(datetime.datetime.now()) + ".txt", "w+")
+      file = open("/output/" + todaystr + "GPS_" + '{:%d.%m.%Y_%H:%M:%S}'.format(datetime.datetime.now()) + ".txt", "w+")
       file.write("GPS-Daten Raspinguin (ISE) vom " + '{:%d.%m.%Y_%H:%M:%S}'.format(datetime.datetime.now()))
       file.write("\n---------------------------------------------------")
       file.write("\nlatitude       " +  str(gpsd.fix.latitude))

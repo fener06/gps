@@ -8,8 +8,8 @@ todaystr = today.isoformat()
 os.chdir('/home/pi/gps/output')
 
 if os.path.exists(todaystr) == True:
-    print('directory exists')
+   print('directory exists')
 else:
     os.mkdir(todaystr)
-        print('directory created')
+    print('directory created')
 

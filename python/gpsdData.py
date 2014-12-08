@@ -11,6 +11,7 @@ import datetime
 today = datetime.date.today()
 todaystr = today.isoformat()
 gpsd = None #seting the global variable
+path = "/home/pi/gps/output"
 
 os.system('clear') #clear the terminal (optional)
 
@@ -39,8 +40,9 @@ if __name__ == '__main__':
       #print gpsd.fix.latitude,', ',gpsd.fix.longitude,'  Time: ',gpsd.utc
 
       os.system('clear')
+      os.chdir( path )
       time.sleep(0)
-      file = open("/output/" + todaystr + "GPS_" + '{:%d.%m.%Y_%H:%M:%S}'.format(datetime.datetime.now()) + ".txt", "w+")
+      file = open("../output/" + todaystr + "/GPS_" + '{:%d.%m.%Y_%H:%M:%S}'.format(datetime.datetime.now()) + ".txt", "wb")
       file.write("GPS-Daten Raspinguin (ISE) vom " + '{:%d.%m.%Y_%H:%M:%S}'.format(datetime.datetime.now()))
       file.write("\n---------------------------------------------------")
       file.write("\nlatitude       " +  str(gpsd.fix.latitude))
